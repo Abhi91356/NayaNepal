@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">नयाँ नेपाल</string>
+    <string name="welcome_message">नयाँ नेपालमा स्वागत छ</string>
+    <string name="login">लग-इन</string>
+    <string name="marketplace">बजार</string>
+    <string name="learning">सीप विकास</string>
+    <string name="agriculture">कृषि</string>
+    <string name="health">स्वास्थ्य</string>
+    <string name="tourism">पर्यटन</string>
+    <string name="verify_id">परिचय पत्र प्रमाणीकरण</string>
+    <string name="wallet_balance">वालेट मौज्दात</string>
+    <string name="pay_send">भुक्तानी गर्नुहोस्</string>
+    <string name="national_news">राष्ट्रिय समाचार तथा अपडेटहरू</string>
+
+    <string name="total_balance">कुल मौज्दात</string>
+    <string name="load">लोड</string>
+    <string name="send">पठाउनुहोस्</string>
+    <string name="scan_qr">क्युआर स्क्यान</string>
+    <string name="history">इतिहास</string>
+    <string name="recent_transactions">हालका कारोबारहरू</string>
+
+    <string name="search_hint">स्थानीय उत्पादनहरू खोज्नुहोस्&#8230;</string>
+    <string name="agricultural">कृषिजन्य</string>
+    <string name="handicrafts">हस्तकला</string>
+    <string name="textiles">कपडा</string>
+    <string name="electronics">इलेक्ट्रोनिक्स</string>
+    <string name="featured_products">विशेष उत्पादनहरू</string>
+
+    <string name="your_progress">तपाईंको प्रगति</string>
+    <string name="progress_status">%1$d%% \'%2$s\' पूरा भयो</string>
+    <string name="recommended_courses">सिफारिस गरिएका पाठ्यक्रमहरू</string>
+
+    <string name="frost_warning">तुसारो चेतावनी: आगामी ४८ घण्टा</string>
+    <string name="crop_advisor">बाली सल्लाहकार</string>
+</resources>

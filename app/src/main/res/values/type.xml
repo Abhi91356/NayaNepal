@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base styles for implicit inheritance -->
+    <style name="Type" parent="" />
+    <style name="Type.Display" parent="Type" />
+    <style name="Type.Heading" parent="Type" />
+    <style name="Type.Body" parent="Type" />
+    <style name="Type.Label" parent="Type" />
+
+    <!-- === DISPLAY === (Hero sections, onboarding titles) -->
+    <style name="Type.Display.Large">
+        <item name="android:fontFamily">sans-serif-black</item> <!-- Fallback to system -->
+        <item name="android:textSize">57sp</item>
+        <item name="android:letterSpacing">-0.025</item>
+        <item name="android:lineHeight">64sp</item>
+    </style>
+
+    <!-- === HEADINGS === -->
+    <style name="Type.Heading.H1">
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/neutral_900</item>
+        <item name="android:lineHeight">40sp</item>
+    </style>
+
+    <style name="Type.Heading.H2">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/neutral_900</item>
+        <item name="android:lineHeight">32sp</item>
+    </style>
+
+    <style name="Type.Heading.H3">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/neutral_900</item>
+        <item name="android:lineHeight">28sp</item>
+    </style>
+
+    <!-- === BODY TEXT === -->
+    <style name="Type.Body.Large">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/neutral_700</item>
+        <item name="android:lineHeight">24sp</item>
+    </style>
+
+    <style name="Type.Body.Medium">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/neutral_700</item>
+        <item name="android:lineHeight">20sp</item>
+    </style>
+
+    <style name="Type.Body.Small">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/neutral_50</item>
+        <item name="android:lineHeight">16sp</item>
+    </style>
+
+    <!-- === LABELS === (Buttons, form labels, tags) -->
+    <style name="Type.Label.Large">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="Type.Label.Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+</resources>

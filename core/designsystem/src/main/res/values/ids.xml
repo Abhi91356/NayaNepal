@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Actions -->
+    <item name="action_loginFragment_to_registerFragment" type="id" />
+    <item name="action_loginFragment_to_homeFragment" type="id" />
+    <item name="action_registerFragment_to_homeFragment" type="id" />
+    <item name="action_homeFragment_to_accountingFragment" type="id" />
+    <item name="action_loginFragment_to_passwordResetFragment" type="id" />
+    <item name="action_onboardingFragment_to_loginFragment" type="id" />
+
+    <item name="action_adminDashboardFragment_to_adminReviewFragment" type="id" />
+    <item name="action_documentCaptureFragment_to_submissionConfirmationFragment" type="id" />
+    <item name="action_documentSelectionFragment_to_documentCaptureFragment" type="id" />
+    <item name="action_submissionConfirmationFragment_to_homeFragment" type="id" />
+    <item name="action_verificationFragment_to_cameraFragment" type="id" />
+    <item name="action_verificationFragment_to_documentSelectionFragment" type="id" />
+
+    <item name="action_homeFragment_to_verificationFragment" type="id" />
+    <item name="action_homeFragment_to_marketplaceFragment" type="id" />
+    <item name="action_homeFragment_to_learningFragment" type="id" />
+    <item name="action_homeFragment_to_agricultureFragment" type="id" />
+    <item name="action_homeFragment_to_walletFragment" type="id" />
+    <item name="action_homeFragment_to_healthFragment" type="id" />
+    <item name="action_homeFragment_to_tourismFragment" type="id" />
+    <item name="action_homeFragment_to_adminDashboardFragment" type="id" />
+    <item name="action_profileFragment_to_loginFragment" type="id" />
+    <item name="action_settings" type="id" />
+
+    <!-- Fragments -->
+    <item name="loginFragment" type="id" />
+    <item name="homeFragment" type="id" />
+    <item name="registerFragment" type="id" />
+    <item name="passwordResetFragment" type="id" />
+    <item name="accountingFragment" type="id" />
+    <item name="verificationFragment" type="id" />
+    <item name="marketplaceFragment" type="id" />
+    <item name="learningFragment" type="id" />
+    <item name="agricultureFragment" type="id" />
+    <item name="walletFragment" type="id" />
+    <item name="healthFragment" type="id" />
+    <item name="tourismFragment" type="id" />
+    <item name="cameraFragment" type="id" />
+    <item name="documentSelectionFragment" type="id" />
+    <item name="documentCaptureFragment" type="id" />
+    <item name="submissionConfirmationFragment" type="id" />
+    <item name="adminDashboardFragment" type="id" />
+    <item name="adminReviewFragment" type="id" />
+    <item name="notificationsFragment" type="id" />
+    <item name="settingsFragment" type="id" />
+    <item name="profileFragment" type="id" />
+    <item name="onboardingFragment" type="id" />
+    <item name="splashFragment" type="id" />
+</resources>

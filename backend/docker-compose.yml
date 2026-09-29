@@ -1,0 +1,88 @@
+version: '3.8'
+
+services:
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "3000:3000"
+    environment:
+      - JWT_SECRET=naya_nepal_enterprise_secret
+      - NODE_ENV=production
+
+  auth-service:
+    build: ./auth-service
+    ports:
+      - "3001:3001"
+    environment:
+      - DB_URL=postgresql://user:pass@postgres:5432/auth_db
+
+  wallet-service:
+    build: ./wallet-service
+    ports:
+      - "3002:3002"
+    environment:
+      - DB_URL=postgresql://user:pass@postgres:5432/wallet_db
+
+  accounting-service:
+    build: ./accounting-service
+    ports:
+      - "3003:3003"
+    environment:
+      - DB_URL=postgresql://user:pass@postgres:5432/naya_nepal
+      - PORT=3003
+
+  employee-service:
+    build: ./employee-service
+    ports:
+      - "3006:3006"
+    environment:
+      - DB_URL=postgresql://user:pass@postgres:5432/naya_nepal
+      - PORT=3006
+
+  complaint-service:
+    build: ./complaint-service
+    environment:
+      - DB_URL=postgresql://user:pass@postgres:5432/naya_nepal
+
+  sos-service:
+    build: ./sos-service
+    environment:
+      - DB_URL=postgresql://user:pass@postgis:5432/geo_db
+
+  tracking-service:
+    build: ./tracking-service
+    environment:
+      - REDIS_URL=redis://redis:6379
+
+  postgres:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=naya_nepal
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  postgis:
+    image: postgis/postgis:13-3.1
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=geo_db
+    volumes:
+      - postgis_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+
+volumes:
+  postgres_data:
+  postgis_data:

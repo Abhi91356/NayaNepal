@@ -1,0 +1,25 @@
+default_platform(:android)
+
+platform :android do
+  desc "Build and upload to Google Play Internal Track"
+  lane :deploy_internal do
+    gradle(
+      task: "bundleRelease",
+      project_dir: "./"
+    )
+
+    upload_to_play_store(
+      package_name: "com.example.nayanepal",
+      track: "internal",
+      aab: "app/build/outputs/bundle/release/app-release.aab",
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+      skip_upload_metadata: true
+    )
+  end
+
+  desc "Run all tests before deployment"
+  lane :test do
+    gradle(task: "test")
+  end
+end

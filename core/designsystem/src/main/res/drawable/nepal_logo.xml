@@ -1,0 +1,37 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Mountain Peaks (Symbolizing Himalayas) -->
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M20,160 L60,80 L100,160 Z" />
+    <path
+        android:fillColor="#F5F5F5"
+        android:pathData="M70,160 L120,40 L170,160 Z" />
+    <path
+        android:fillColor="#D3D3D3"
+        android:pathData="M130,160 L160,90 L190,160 Z" />
+
+    <!-- Nepal Flag Shape -->
+    <path
+        android:fillColor="#DC143C"
+        android:pathData="M40,140 L40,40 L100,85 L40,85 L100,130 L40,130 Z" />
+
+    <!-- Flag Border (Blue) -->
+    <path
+        android:strokeColor="#003893"
+        android:strokeWidth="2"
+        android:pathData="M40,140 L40,40 L100,85 L40,85 L100,130 L40,130 Z" />
+
+    <!-- Sun and Moon (Simplified) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M55,65 A8,8 0 1,1 55,66 Z" /> <!-- Moon -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M55,105 A10,10 0 1,1 55,106 Z" /> <!-- Sun -->
+
+</vector>

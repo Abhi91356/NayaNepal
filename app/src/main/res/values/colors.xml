@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="primary">#1A237E</color> <!-- Deep Blue -->
+    <color name="primary_500">#1A237E</color>
+    <color name="primary_700">#000051</color>
+    <color name="primary_100">#E8EAF6</color>
+
+    <color name="secondary">#4CAF50</color> <!-- Vibrant Green -->
+    <color name="accent_500">#4CAF50</color>
+
+    <color name="background">#F5F5F5</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="error">#B00020</color>
+    <color name="error_500">#B00020</color>
+
+    <!-- Warning Colors -->
+    <color name="warning_500">#FBC02D</color>
+    <color name="warning_100">#FFF9C4</color>
+
+    <!-- Neutral Palette -->
+    <color name="neutral_900">#121212</color>
+    <color name="neutral_700">#424242</color>
+    <color name="neutral_500">#9E9E9E</color>
+    <color name="neutral_300">#E0E0E0</color>
+    <color name="neutral_100">#F5F5F5</color>
+    <color name="neutral_50">#FAFAFA</color>
+
+    <!-- Component specific -->
+    <color name="input_stroke_color">#E0E0E0</color>
+    <color name="bottom_nav_color">#757575</color>
+</resources>

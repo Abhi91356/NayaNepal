@@ -1,0 +1,10 @@
+<!-- Reusable badge background — change color per status in code -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/warning_100"/>
+    <corners android:radius="@dimen/radius_full"/>
+    <padding
+        android:left="@dimen/space_12"
+        android:top="@dimen/space_4"
+        android:right="@dimen/space_12"
+        android:bottom="@dimen/space_4"/>
+</shape>

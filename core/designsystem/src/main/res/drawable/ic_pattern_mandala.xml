@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <!-- Simplified Mandala Motif -->
+    <path
+        android:strokeColor="#DC143C"
+        android:strokeWidth="1"
+        android:pathData="M50,10 A40,40 0 1,1 50,90 A40,40 0 1,1 50,10 Z" />
+    <path
+        android:strokeColor="#003893"
+        android:strokeWidth="1"
+        android:pathData="M50,20 L60,40 L80,50 L60,60 L50,80 L40,60 L20,50 L40,40 Z" />
+    <path
+        android:fillColor="#DC143C"
+        android:pathData="M50,45 A5,5 0 1,1 50,55 A5,5 0 1,1 50,45 Z" />
+</vector>

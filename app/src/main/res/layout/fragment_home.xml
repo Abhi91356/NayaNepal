@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/neutral_50">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Shimmer Loading -->
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+                <include layout="@layout/layout_skeleton_card" />
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <LinearLayout
+                android:id="@+id/contentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Header Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="@color/primary_500">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/screen_padding_horizontal"
+                        android:paddingTop="@dimen/space_56"
+                        android:paddingBottom="@dimen/space_32">
+
+                        <ImageView
+                            android:id="@+id/ivAvatar"
+                            android:layout_width="@dimen/avatar_size_medium"
+                            android:layout_height="@dimen/avatar_size_medium"
+                            android:background="@drawable/bg_avatar_circle"
+                            android:contentDescription="User avatar"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <ImageButton
+                            android:id="@+id/btnNotifications"
+                            android:layout_width="@dimen/touch_target_min"
+                            android:layout_height="@dimen/touch_target_min"
+                            android:src="@drawable/ic_bell"
+                            android:background="@drawable/bg_icon_btn_white"
+                            android:contentDescription="Notifications"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/tvUserName"
+                            style="@style/Type.Heading.H2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_16"
+                            android:text="Abhishek Kumar Sah"
+                            android:textColor="@color/white"
+                            app:layout_constraintTop_toBottomOf="@id/ivAvatar"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/btnNotifications"/>
+
+                        <!-- Wallet Mini Card -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardWallet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_24"
+                            app:cardBackgroundColor="#20FFFFFF"
+                            app:cardCornerRadius="@dimen/radius_medium"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="#40FFFFFF"
+                            app:layout_constraintTop_toBottomOf="@id/tvUserName">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/space_16"
+                                android:gravity="center_vertical">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/wallet_balance"
+                                        android:textColor="#CCFFFFFF"
+                                        style="@style/Type.Body.Small"/>
+                                    <TextView
+                                        android:id="@+id/tvBalance"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="रू 12,450.00"
+                                        android:textColor="@color/white"
+                                        style="@style/Type.Heading.H3"/>
+                                </LinearLayout>
+
+                                <Button
+                                    android:id="@+id/btnPay"
+                                    style="@style/Component.Button.Primary"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="36dp"
+                                    android:text="@string/pay_send"
+                                    android:backgroundTint="@color/white"
+                                    android:textColor="@color/primary_500"
+                                    android:textSize="12sp"
+                                    app:cornerRadius="@dimen/radius_full"/>
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Core Pillars Grid -->
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:paddingHorizontal="@dimen/space_12"
+                    android:layout_marginTop="-16dp">
+
+                    <!-- Marketplace -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardMarketplace"
+                        style="@style/Component.Card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/space_4">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@android:drawable/ic_menu_gallery"
+                                app:tint="@color/primary_500"
+                                android:contentDescription="Marketplace icon" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:text="@string/marketplace"
+                                style="@style/Type.Label.Large"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Learning -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardLearning"
+                        style="@style/Component.Card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/space_4">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@android:drawable/ic_menu_edit"
+                                app:tint="@color/primary_500"
+                                android:contentDescription="Learning icon" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:text="@string/learning"
+                                style="@style/Type.Label.Large"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Agriculture -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAgriculture"
+                        style="@style/Component.Card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/space_4">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@android:drawable/ic_menu_compass"
+                                app:tint="@color/primary_500"
+                                android:contentDescription="Agriculture icon" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:text="@string/agriculture"
+                                style="@style/Type.Label.Large"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Health -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardHealth"
+                        style="@style/Component.Card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/space_4">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@android:drawable/ic_menu_call"
+                                app:tint="@color/primary_500"
+                                android:contentDescription="Health icon" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:text="@string/health"
+                                style="@style/Type.Label.Large"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Tourism -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardTourism"
+                        style="@style/Component.Card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/space_4">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@android:drawable/ic_menu_directions"
+                                app:tint="@color/primary_500"
+                                android:contentDescription="Tourism icon" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:text="@string/tourism"
+                                style="@style/Type.Label.Large"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Identity Verification -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardVerification"
+                        style="@style/Component.Card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/space_4">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@drawable/ic_shield_check"
+                                app:tint="@color/primary_500"
+                                android:contentDescription="Verify ID icon" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:text="@string/verify_id"
+                                style="@style/Type.Label.Large"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- MSME Accounting -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAccounting"
+                        style="@style/Component.Card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/space_4">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@android:drawable/ic_menu_edit"
+                                app:tint="@color/primary_500"
+                                android:contentDescription="Accounting icon" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:text="Accounting"
+                                style="@style/Type.Label.Large"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </GridLayout>
+
+                <!-- Status Summary -->
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Component.Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/screen_padding_horizontal"
+                    android:layout_marginTop="@dimen/space_16"
+                    app:cardElevation="2dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <ImageView
+                            android:id="@+id/ivStatusIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_shield_check"
+                            android:contentDescription="Status icon" />
+                        <TextView
+                            android:id="@+id/tvVerificationStatus"
+                            style="@style/Type.Body.Medium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="@dimen/space_12"
+                            android:text="Identity: Unverified"/>
+                        <TextView
+                            android:id="@+id/tvStatusBadge"
+                            style="@style/Type.Label.Medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_status_badge"
+                            android:text="Action Required"
+                            android:textColor="@color/error_500"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Trending / News -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/screen_padding_horizontal"
+                    android:layout_marginTop="@dimen/space_32"
+                    android:text="@string/national_news"
+                    style="@style/Type.Heading.H3"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvUpdates"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:paddingHorizontal="@dimen/space_12"
+                    android:nestedScrollingEnabled="false"/>
+
+            </LinearLayout>
+        </FrameLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

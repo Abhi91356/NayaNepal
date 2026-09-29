@@ -1,0 +1,111 @@
+name: NayaNepal Enterprise CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # --- PILLAR 1: ANDROID APP CI ---
+  android-ci:
+    name: Android CI (Unit Tests & Build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+        
+      - name: Run Android Lint
+        run: ./gradlew lintDebug
+        
+      - name: Run Android Unit Tests
+        run: ./gradlew testDebugUnitTest
+        
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug
+
+  # --- PILLAR 2: BACKEND MICROSERVICES CI ---
+  backend-ci:
+    name: Backend CI (Microservices)
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service: [auth-service, wallet-service, marketplace-service, learning-service, accounting-service, api-gateway]
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: './backend/${{ matrix.service }}/package-lock.json'
+
+      - name: Install dependencies
+        working-directory: ./backend/${{ matrix.service }}
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+      
+      - name: Run Tests
+        working-directory: ./backend/${{ matrix.service }}
+        run: |
+          if npm run | grep -q "test"; then
+            npm test
+          else
+            echo "No test script found for ${{ matrix.service }}"
+          fi
+
+      - name: Build Docker image
+        run: |
+          docker build -t gcr.io/naya-nepal/${{ matrix.service }}:${{ github.sha }} ./backend/${{ matrix.service }}
+
+  # --- PILLAR 3: DEPLOYMENT (CD) ---
+  deploy-staging:
+    name: Deploy to Staging
+    needs: [android-ci, backend-ci]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/develop'
+    steps:
+      - name: Deploying to GCP Staging Cluster
+        run: echo "Deploying images with tag ${{ github.sha }} to Staging..."
+
+  deploy-production:
+    name: Deploy to Production (Cloud Run)
+    needs: [android-ci, backend-ci]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Google Auth
+        uses: 'google-github-actions/auth@v2'
+        with:
+          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v2'
+
+      - name: 'Deploy Microservices to Cloud Run'
+        run: |
+          services=("auth-service" "wallet-service" "marketplace-service" "learning-service" "accounting-service" "api-gateway")
+          for service in "${services[@]}"; do
+            gcloud run deploy "$service" \
+              --image "gcr.io/naya-nepal/$service:${{ github.sha }}" \
+              --region asia-south1 \
+              --platform managed \
+              --allow-unauthenticated
+          done

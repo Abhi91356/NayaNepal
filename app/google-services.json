@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1029053265879",
+    "project_id": "naya-nepal-93b79",
+    "storage_bucket": "naya-nepal-93b79.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029053265879:android:dea8298f9d600bd965fd92",
+        "android_client_info": {
+          "package_name": "com.example.nayanepal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCAyt-9tMhm4UO_O4rdBLh8Qtmhnlm19A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

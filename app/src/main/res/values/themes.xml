@@ -1,0 +1,3 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Themes are now defined in styles.xml to serve as a unified UI Kit -->
+</resources>

@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">Naya Nepal</string>
+    <string name="default_web_client_id">YOUR_WEB_CLIENT_ID</string>
+    <string name="facebook_app_id">YOUR_FB_APP_ID</string>
+    <string name="fb_login_protocol_scheme">fbYOUR_FB_APP_ID</string>
+    <string name="facebook_client_token">YOUR_FB_CLIENT_TOKEN</string>
+
+    <string name="welcome_message">Welcome to Naya Nepal</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="or_separator">OR</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="no_account_register">No account? Register</string>
+
+    <!-- Verification -->
+    <string name="verify_identity">Verify Your Identity</string>
+    <string name="select_doc_type">Select Document Type</string>
+    <string name="citizenship">Citizenship Card</string>
+    <string name="passport">Passport</string>
+    <string name="national_id">National ID</string>
+    <string name="capture_upload">Capture / Upload Document</string>
+    <string name="submit">Submit</string>
+    <string name="submitting">Submitting&#8230;</string>
+    <string name="submitted_success">Submitted successfully</string>
+    <string name="select_type_image">Select type and image</string>
+
+    <!-- Home Hubs -->
+    <string name="marketplace">Marketplace</string>
+    <string name="learning">Smart Skills</string>
+    <string name="agriculture">Agriculture</string>
+    <string name="health">Health</string>
+    <string name="tourism">Tourism</string>
+    <string name="verify_id">Verify ID</string>
+    <string name="wallet_balance">Wallet Balance</string>
+    <string name="pay_send">Pay / Send</string>
+    <string name="national_news">National News and Updates</string>
+
+    <!-- Wallet -->
+    <string name="total_balance">Total Balance</string>
+    <string name="load">Load</string>
+    <string name="send">Send</string>
+    <string name="scan_qr">Scan QR</string>
+    <string name="history">History</string>
+    <string name="recent_transactions">Recent Transactions</string>
+
+    <!-- Marketplace -->
+    <string name="search_hint">Search local products&#8230;</string>
+    <string name="agricultural">Agricultural</string>
+    <string name="handicrafts">Handicrafts</string>
+    <string name="textiles">Textiles</string>
+    <string name="electronics">Electronics</string>
+    <string name="featured_products">Featured Products</string>
+
+    <!-- Learning -->
+    <string name="your_progress">Your Progress</string>
+    <string name="progress_status">%1$d%% of \'%2$s\' completed</string>
+    <string name="recommended_courses">Recommended Courses</string>
+
+    <!-- Agriculture -->
+    <string name="frost_warning">Frost Warning: Next 48 Hours</string>
+    <string name="crop_advisor">Crop Advisor</string>
+</resources>

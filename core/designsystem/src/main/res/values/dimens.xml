@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- === BASE UNIT: 4dp === -->
+    <!-- All spacing is a multiple of 4dp — this is Google's and Apple's rule -->
+    <dimen name="space_2">2dp</dimen>
+    <dimen name="space_4">4dp</dimen>
+    <dimen name="space_8">8dp</dimen>
+    <dimen name="space_12">12dp</dimen>
+    <dimen name="space_16">16dp</dimen>
+    <dimen name="space_20">20dp</dimen>
+    <dimen name="space_24">24dp</dimen>
+    <dimen name="space_32">32dp</dimen>
+    <dimen name="space_40">40dp</dimen>
+    <dimen name="space_48">48dp</dimen>
+    <dimen name="space_56">56dp</dimen>
+    <dimen name="space_64">64dp</dimen>
+
+    <!-- === SCREEN PADDING === -->
+    <dimen name="screen_padding_horizontal">20dp</dimen>
+    <dimen name="screen_padding_vertical">24dp</dimen>
+
+    <!-- === CORNER RADIUS === -->
+    <dimen name="radius_small">6dp</dimen>
+    <dimen name="radius_medium">12dp</dimen>
+    <dimen name="radius_large">16dp</dimen>
+    <dimen name="radius_xl">24dp</dimen>
+    <dimen name="radius_full">100dp</dimen>  <!-- Pill shape -->
+
+    <!-- === COMPONENT SIZES === -->
+    <dimen name="btn_height_large">56dp</dimen>
+    <dimen name="btn_height_medium">48dp</dimen>
+    <dimen name="btn_height_small">36dp</dimen>
+    <dimen name="input_height">56dp</dimen>
+    <dimen name="bottom_nav_height">64dp</dimen>
+    <dimen name="top_app_bar_height">60dp</dimen>
+    <dimen name="touch_target_min">48dp</dimen>  <!-- WCAG accessibility minimum -->
+    <dimen name="icon_size_small">16dp</dimen>
+    <dimen name="icon_size_medium">20dp</dimen>
+    <dimen name="icon_size_large">24dp</dimen>
+    <dimen name="avatar_size_medium">40dp</dimen>
+    <dimen name="avatar_size_large">64dp</dimen>
+
+    <!-- === ELEVATION (shadows) === -->
+    <dimen name="elevation_card">4dp</dimen>
+    <dimen name="elevation_dropdown">8dp</dimen>
+    <dimen name="elevation_modal">16dp</dimen>
+    <dimen name="elevation_bottom_nav">8dp</dimen>
+
+</resources>

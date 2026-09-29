@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/neutral_50">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/screen_padding_horizontal"
+            android:paddingTop="@dimen/space_56"
+            android:paddingBottom="@dimen/space_32">
+
+            <TextView
+                style="@style/Type.Heading.H2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Verify your Identity" />
+
+            <TextView
+                style="@style/Type.Body.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:text="Upload a clear photo of your government ID."
+                android:textColor="@color/neutral_500" />
+
+            <!-- Document Selection Card -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Component.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_32">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Type.Label.Large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Select ID Type"
+                        android:textColor="@color/neutral_900" />
+
+                    <RadioGroup
+                        android:id="@+id/rgDocType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_16">
+
+                        <RadioButton
+                            android:id="@+id/rbCitizenship"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Citizenship Card"
+                            android:fontFamily="sans-serif" />
+
+                        <RadioButton
+                            android:id="@+id/rbPassport"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:text="Passport"
+                            android:fontFamily="sans-serif" />
+
+                        <RadioButton
+                            android:id="@+id/rbNationalId"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:text="National ID"
+                            android:fontFamily="sans-serif" />
+                    </RadioGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Preview Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPreview"
+                style="@style/Component.Card"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_marginTop="@dimen/space_16"
+                app:cardBackgroundColor="@color/neutral_100"
+                app:cardElevation="0dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/ivDocPreview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/placeholderGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@android:drawable/ic_menu_camera"
+                            app:tint="@color/neutral_300" />
+
+                        <TextView
+                            android:id="@+id/tvPlaceholder"
+                            style="@style/Type.Body.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:text="No image captured"
+                            android:textColor="@color/neutral_500" />
+                    </LinearLayout>
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Button
+                android:id="@+id/btnPickImage"
+                style="@style/Component.Button.Secondary"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height_large"
+                android:layout_marginTop="@dimen/space_24"
+                android:text="Take Photo / Upload" />
+
+            <Button
+                android:id="@+id/btnSubmit"
+                style="@style/Component.Button.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height_large"
+                android:layout_marginTop="@dimen/space_16"
+                android:text="Submit for Verification" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/space_24"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
